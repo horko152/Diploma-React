@@ -1,0 +1,296 @@
+
+.home{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+.home > img{
+    margin-right: 20px;
+    height: 38px;
+    width: 38px;
+    margin-top: -5px;
+}
+.home > h3{
+    color: #fff;
+    font-family: 'Press Start 2P',cursive;
+    font-size: 32px;
+}
+.header-user{
+    display: flex;
+    cursor: pointer;
+}
+.hidden{
+    display: none;
+}
+
+.profile{
+    height: 100vh;
+    display: flex;
+    margin-left: 30px;
+    margin-top: 20px;
+}
+.profile-img{
+    display: flex;
+    justify-content: flex-start;
+    padding-top: 70px;
+    height: 400px;
+}
+.profile-img > img{
+    height: 300px;
+    width: 300px;
+}
+.profile-column{
+    display: flex;
+    flex-direction: column;
+    padding-top: 130px;
+}
+.profile-name{
+    display: flex;
+    align-items: center;
+    color: #fff;
+    font-family: 'Roboto',sans-serif;
+    margin-left: 40px;
+}
+.profile-name > h3{
+    text-align: center;
+    font-size: 40px;
+    padding-left: 20px;
+}
+.profile-name > h4{
+    text-align: center;
+    font-size: 30px;
+}
+.profile-surname{
+    display: flex;
+    align-items: center;
+    color: #fff;
+    font-family: 'Roboto',sans-serif;
+    margin-left: 40px;
+    margin-top: 30px;
+}
+.profile-surname > h3{
+    text-align: center;
+    font-size: 40px;
+    padding-left: 20px;
+}
+.profile-surname > h4{
+    text-align: center;
+    font-size: 30px;
+}
+.profile-date-of-bithday{
+    display: flex;
+    align-items: center;
+    color: #fff;
+    font-family: 'Roboto',sans-serif;
+    margin-left: 40px;
+    margin-top: 30px;
+}
+.profile-date-of-bithday > h4{
+    text-align: center;
+    font-size: 30px;
+}
+.profile-date-of-bithday > h3{
+    text-align: center;
+    font-size: 32px;
+    padding-left: 20px;
+}
+.profile-email{
+    display: flex;
+    align-items: center;
+    color: #fff;
+    font-family: 'Roboto',sans-serif;
+    margin-left: 40px;
+    margin-top: 35px;
+}
+.profile-email > h4{
+    text-align: center;
+    font-size: 30px;
+}
+.profile-email > h3{
+    text-align: center;
+    font-size: 24px;
+    padding-left: 20px;
+}
+.profile-information{
+    position: absolute;
+    left: 50px;
+    bottom: 25%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 50px;
+   
+    color: #fff;
+    font-family: 'Roboto',sans-serif;
+}
+.information-title{
+    font-size: 30px;
+    margin-bottom: 0px;
+}
+.information-title > h3{
+    color: #fff;
+
+}
+.profile-information > p{
+    width: 600px;
+    font-size: 24px;
+    line-height: 30px;
+    padding-top: 20px;
+}
+.profile-edit{
+    position: absolute;
+    justify-content: center;
+    font-family: 'Press Start 2P',sans-serif;
+    bottom: 10%;
+    margin-left: -80px;
+}
+.edit-btn{
+    background-color: darkgrey;
+    height: 50px;
+    width: 200px;
+    border-style: solid;
+    border-width: 4px;
+    border-left-color: white;
+    border-top-color: white;
+    border-bottom-color: dimgrey;
+    border-right-color: dimgrey;
+    -webkit-box-shadow: 2px 2px 0px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 2px 2px 0px 0px rgba(0,0,0,0.75);
+    box-shadow: 2px 2px 0px 0px rgba(0,0,0,0.75);
+}
+.btn-content{
+    padding: 10px;
+    text-align:center;
+    font-family: 'Press Start 2P', cursive;
+    user-select: none;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -o-user-select: none;
+}
+.edit-btn:hover{
+    background-color: darkblue;
+    color: white;
+    cursor: pointer;
+}
+.edit-btn:active{
+    background-color: darkgrey;
+    color: black;
+    border-left-color: dimgrey;
+    border-top-color: dimgrey;
+    border-bottom-color: white;
+    border-right-color: white;
+    -webkit-box-shadow: 0px 0px 0px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 0px 0px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 0px 0px rgba(0,0,0,0.75);
+}
+.profile-songs{
+    position: absolute;
+    right: 60px;
+}
+.songs-title{
+    margin-top: 70px;
+    margin-bottom: 25px;
+    display: flex;
+    justify-content: center;
+    color: #fff;
+    font-family: 'Roboto',sans-serif;
+}
+.songs-title > h3{
+    line-height: 40px;
+    font-size: 30px;
+}
+div.user-songs {
+    font-family: 'Roboto',sans-serif;
+    line-height: 33px;
+    border: 4px solid #792396;
+    background-color: #555555;
+    width: 550px;
+    text-align: center;
+    border-collapse: collapse;
+}
+.divTableHead{
+    font-size: 30px;
+}
+.divTable.user-songs .divTableCell, .divTable.user-songs .divTableHead {
+    border: 1px solid #555555;
+    padding: 5px 2px;
+}
+.divTable.user-songs .divTableBody .divTableCell {
+    font-size: 13px;
+    font-weight: bold;
+    color: #FFFFFF;
+}
+.id-cell, .name-cell, .artist-cell, .likes-cell{
+    font-family: 'Press Start 2P', cursive;
+}
+  .divTable.user-songs .divTableRow:nth-child(even) {
+    background: #CC3BFC;
+  }
+  .divTable.user-songs .divTableHeading {
+    background: #792396;
+    border-bottom: 4px solid #792396;
+  }
+  .divTable.user-songs .divTableHeading .divTableHead {
+    font-size: 19px;
+    font-weight: bold;
+    color: #FFFFFF;
+    text-align: center;
+    border-left: 2px solid #792396;
+  }
+  .divTable.user-songs .divTableHeading .divTableHead:first-child {
+    border-left: none;
+  }
+  
+  .user-songs .tableFootStyle {
+    font-size: 13px;
+    font-weight: bold;
+    color: #FFFFFF;
+    background: #CE3CFF;
+    background: -moz-linear-gradient(top, #da6dff 0%, #d34fff 66%, #CE3CFF 100%);
+    background: -webkit-linear-gradient(top, #da6dff 0%, #d34fff 66%, #CE3CFF 100%);
+    background: linear-gradient(to bottom, #da6dff 0%, #d34fff 66%, #CE3CFF 100%);
+    border-top: 3px solid #792396;
+  }
+  .user-songs .tableFootStyle {
+    font-size: 13px;
+  }
+  .user-songs .tableFootStyle .links {
+       text-align: right;
+  }
+  .user-songs .tableFootStyle .links a{
+    display: inline-block;
+    background: #792396;
+    color: #FFFFFF;
+    padding: 2px 8px;
+    border-radius: 5px;
+  }
+  .user-songs.outerTableFooter {
+    border-top: none;
+  }
+  .user-songs.outerTableFooter .tableFootStyle {
+    padding: 3px 5px; 
+  }
+.divTable{ 
+    display: table; 
+}
+.divTableRow { 
+    display: table-row; 
+}
+.divTableHeading { 
+    display: table-header-group;
+}
+.divTableCell, .divTableHead { 
+    display: table-cell;
+}
+.divTableHeading { 
+    display: table-header-group;
+}
+.divTableFoot { 
+    display: table-footer-group;
+}
+.divTableBody { 
+    display: table-row-group;
+}
