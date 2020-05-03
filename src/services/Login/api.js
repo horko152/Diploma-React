@@ -1,6 +1,6 @@
 import request from "../request";
 
-export const signIn = async (object) => {
-  return await request.post('login', { ...object });
+export const signInRequest = async (object) => {
+  return await request.post('api/login', { ...object });
 }
 

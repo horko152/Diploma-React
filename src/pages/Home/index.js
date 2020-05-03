@@ -1,8 +1,22 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from 'react-router-dom'
 import RadioButton from "../../components/RadioButton";
 
 const Home = () => {
+  const [volume,setVolume] = useState(1);
+  const changeInput = event=>{
+    if(event.target.value == 0){
+      setMute(true);
+    }
+    setVolume(event.target.value)
+  }
+  const [mute,setMute] = useState(false);
+  const clickMute =()=>{
+    setMute(!mute);
+  }
+  const [pause,setPause] = useState(false);
+  const [likeType,setLikeType] = useState(false);
+  
   return (
     <div>
       <header className="header home-header">
@@ -30,11 +44,11 @@ const Home = () => {
           </div>
         </div>
         <div className="volume">
-          <img className="volume-img" src={require('../../assets/image/volume.png')} alt=""/>
-          <img className="mute-img hidden" src={require('../../assets/image/mute.png')} alt=""/>
+          <img className={`volume-img ${mute ? "hidden":""}`} onClick={clickMute} src={require('../../assets/image/volume.png')} alt=""/>
+          <img className={`mute-img ${mute ? "":"hidden"}`} onClick={clickMute} src={require('../../assets/image/mute.png')} alt=""/>
           <div className="volume-control">
-            <input className="inp-range" id="rng" onInput="currentrange()"
-                   type="range" min="0" max="100" value="1" step="1"/>
+            <input className="inp-range" id="rng" onChange ={changeInput}
+                   type="range" min="0" max="100" value={mute ? 0 : volume} step="1"/>
           </div>
         </div>
         <div className="song-options">
@@ -44,18 +58,16 @@ const Home = () => {
             </button>
           </div>
           <div className="play pause">
-            <img className="play-img" src={require('../../assets/image/play.png')} onClick="PlayPause(this)" alt=""/>
-            <img className="pause-img hidden" src={require('../../assets/image/pause.png')} onClick="PlayPause(this)"
-                 alt=""/>
+            <img className="play-img" src={require(`../../assets/image/${pause ? "pause.png" : "play.png" }`)} onClick={()=>setPause(!pause)}  alt=""/>
           </div>
           <div className="like-container">
             <div className="dislike">
-              <img className="dislike-img" src={require('../../assets/image/dislike.png')} alt=""/>
-              <img className="dislike-img-active hidden" src={require('../../assets/image/dislike-black.png')} alt=""/>
+              {(likeType === "dislike") ? <img className="dislike-img-active" src={require("../../assets/image/dislike-black.png")} onClick={()=>setLikeType("dislike")} alt=""/> :
+              <img className={`dislike-img ${(likeType === "like") ? "hidden" : ""}`} src={require('../../assets/image/dislike.png')} onClick={()=>setLikeType("dislike")} alt=""/>}
             </div>
             <div className="like">
-              <img className="like-img" src={require('../../assets/image/like.png')} alt=""/>
-              <img className="like-img-active hidden" src={require('../../assets/image/like-red.png')} alt=""/>
+              {likeType === "like" ? <img className="like-img-active" src={require("../../assets/image/like-red.png")} onClick={()=>setLikeType("like")} alt=""/> :
+              <img className={`like-img ${(likeType === "dislike") ? "hidden" : ""}`} src={require('../../assets/image/like.png')} onClick={()=>setLikeType("like")} alt=""/>}
             </div>
           </div>
         </div>

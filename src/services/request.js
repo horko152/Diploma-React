@@ -1,5 +1,5 @@
 
-const API = 'http://internal-dashboard.bvblogic.live/api';
+const API = 'https://localhost:44360';
 
 const getUserToken = async () => {
   // let token = await localStorage.getItem('auth_token') || state.authReducer.token || null;
