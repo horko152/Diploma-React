@@ -1,9 +1,8 @@
-
 const API = 'https://localhost:44360';
 
 const getUserToken = async () => {
-  // let token = await localStorage.getItem('auth_token') || state.authReducer.token || null;
-  // if (token === 'null') token = null;
+  let token = await localStorage.getItem('token') || null;
+  if (token === 'null') token = null;
 
   return null;
 };
