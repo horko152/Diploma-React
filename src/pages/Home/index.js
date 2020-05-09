@@ -1,12 +1,18 @@
 import React, { useState } from "react";
 import { Link } from 'react-router-dom'
+import ReactHowler from 'react-howler'
 import RadioButton from "../../components/RadioButton";
+import { Howl, Howler } from 'howler';
 
-const Home = () => {
+const Home = ({isLogged}) => {
   const [volume,setVolume] = useState(1);
   const changeInput = event=>{
     if(event.target.value == 0){
       setMute(true);
+    }
+    if(event.target.value > 0)
+    {
+      setMute(false);
     }
     setVolume(event.target.value)
   }
@@ -14,6 +20,8 @@ const Home = () => {
   const clickMute =()=>{
     setMute(!mute);
   }
+
+  const [play,setPlay] = useState(false);
   const [pause,setPause] = useState(false);
   const [likeType,setLikeType] = useState(false);
   
@@ -23,10 +31,10 @@ const Home = () => {
         <div className="header-user">
           <div className="viewers">120 viewers</div>
           <Link to={'/login'}>
-            <img src={require('../../assets/image/login.png')} className="login-img" alt="Login"/>
+            <img src={require('../../assets/image/login.png')} className={`login-img ${isLogged ? "hidden" : ""}`} alt="Login"/>
           </Link>
           <Link to={'/profile'}>
-            <img src={require('../../assets/image/user1.png')} className="user-img hidden" alt="Profile"/>
+            <img src={require('../../assets/image/user1.png')} className={`user-img ${isLogged ? "" : "hidden"}`} alt="Profile"/>
           </Link>
         </div>
       </header>
@@ -56,9 +64,32 @@ const Home = () => {
             <button className="add-btn">
               <span className="btn-content">Add Song</span>
             </button>
+            <form className="add-song-form">
+              <div className="add-song-content hidden">
+                <input name="song-name-input" className="songname-input" type="text" placeholder="Name of song..."/>
+                <input name="song-artist-input" className="song-artist-input" type="text" placeholder="Name of the artist..."/>
+                <input name="song-album-input" className="song-album-input" type="text" placeholder="Name of Album(not requirment)..."/>
+                <input name="song-file-input" className="song-file-input" type="file"/>
+                <input name="song-submit" type="submit"/>
+              </div>
+            </form>
           </div>
-          <div className="play pause">
-            <img className="play-img" src={require(`../../assets/image/${pause ? "pause.png" : "play.png" }`)} onClick={()=>setPause(!pause)}  alt=""/>
+          <div className="play pause"> 
+            <ReactHowler
+              src={'https://file-examples.com/wp-content/uploads/2017/11/file_example_MP3_5MG.mp3'}
+              // https://file-examples.com/wp-content/uploads/2017/11/file_example_MP3_5MG.mp3
+              // С:/Users/Horko/Desktop/The Weeknd - Virgin (from American Dad).mp3
+              preload ={true}
+              playing={play}
+              volume={volume/100}
+            
+            />
+            <img className="play-img" src={require(`../../assets/image/${pause ? "pause.png" : "play.png" }`)} onClick={()=>{
+              setPause(!pause);
+              pause ? setPlay(false) : setPlay(true);
+            }}  
+              alt=""
+            />
           </div>
           <div className="like-container">
             <div className="dislike">

@@ -4,7 +4,7 @@ const getUserToken = async () => {
   let token = await localStorage.getItem('token') || null;
   if (token === 'null') token = null;
 
-  return null;
+  return token;
 };
 
 function getBaseOptions(method) {
