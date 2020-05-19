@@ -25,7 +25,7 @@ const Home = ({isLogged}) => {
   const [play,setPlay] = useState(false);
   const [pause,setPause] = useState(false);
   const [likeType,setLikeType] = useState(false);
-  
+  const [AddingSong,setAddingSong] = useState(false);
   return (
     <div>
       <header className="header home-header">
@@ -62,9 +62,10 @@ const Home = ({isLogged}) => {
         </div>
         <div className="song-options">
           <div className="add-song">
-            <button className="add-btn" onClick={()=> {return(<AddSong/>)}}>
+            <button className="add-btn" onClick={()=>{setAddingSong(!AddingSong)}}>
               <span className="btn-content">Add Song</span>
             </button>
+            {AddingSong ? <AddSong/> : null}
           </div>
           <div className="play pause"> 
             <ReactHowler

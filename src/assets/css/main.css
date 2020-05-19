@@ -344,7 +344,7 @@ input[type="range"]::-ms-fill-upper {
 .add-song-form{
   display:flex;
 }
-.add-btn{
+.add-btn, .song-submit{
   background-color: darkgrey;
   height: 50px;
   width: 200px;
@@ -358,7 +358,7 @@ input[type="range"]::-ms-fill-upper {
   -moz-box-shadow: 2px 2px 0px 0px rgba(0,0,0,0.75);
   box-shadow: 2px 2px 0px 0px rgba(0,0,0,0.75);
 }
-.btn-content{
+.btn-content, .song-submit{
   padding: 10px;
   text-align:center;
   font-family: 'Press Start 2P', cursive;
@@ -368,12 +368,12 @@ input[type="range"]::-ms-fill-upper {
   -webkit-user-select: none;
   -o-user-select: none;
 }
-.add-btn:hover{
+.add-btn:hover, .song-submit:hover{
   background-color: darkblue;
   color: white;
   cursor: pointer;
 }
-.add-btn:active{
+.add-btn:active, .song-submit:active{
   background-color: darkgrey;
   color: black;
   border-left-color: dimgrey;
@@ -384,6 +384,43 @@ input[type="range"]::-ms-fill-upper {
   -moz-box-shadow: 0px 0px 0px 0px rgba(0,0,0,0.75);
   box-shadow: 0px 0px 0px 0px rgba(0,0,0,0.75);
 }
+.add-song-form{
+  position: fixed;
+  top: 22%;
+  left: 39%;
+  height: 400px;
+  width: 300px;
+}
+.add-song-content{
+  background-color: rgb(172, 42, 184);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 10%;
+  border: 2px solid;
+}
+.add-song-content > h3{
+  margin-left: -15px;
+  margin-top: 20px;
+  margin-bottom:20px;
+  font-size: 26px;
+}
+.song-input, .song-file-input{
+  margin-bottom: 30px;
+  height: 35px;
+  width: 90%;
+  border-radius: 5px;
+  border: none;
+  padding-left: 5px;
+  color: #000;
+}
+.song-submit{
+  padding: 0px;
+  font-size: 15px;
+  height: 30px;
+  width: 50%;
+}
+
 .play, .pause{
   position: absolute;
   display: flex;
