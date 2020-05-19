@@ -341,6 +341,9 @@ input[type="range"]::-ms-fill-upper {
   justify-content: flex-start;
   font-family: 'Press Start 2P',sans-serif;
 }
+.add-song-form{
+  display:flex;
+}
 .add-btn{
   background-color: darkgrey;
   height: 50px;

@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import ReactHowler from 'react-howler'
 import RadioButton from "../../components/RadioButton";
 import { Howl, Howler } from 'howler';
+import AddSong from "./components/AddSong";
 
 const Home = ({isLogged}) => {
   const [volume,setVolume] = useState(1);
@@ -61,18 +62,9 @@ const Home = ({isLogged}) => {
         </div>
         <div className="song-options">
           <div className="add-song">
-            <button className="add-btn">
+            <button className="add-btn" onClick={()=> {return(<AddSong/>)}}>
               <span className="btn-content">Add Song</span>
             </button>
-            <form className="add-song-form">
-              <div className="add-song-content hidden">
-                <input name="song-name-input" className="songname-input" type="text" placeholder="Name of song..."/>
-                <input name="song-artist-input" className="song-artist-input" type="text" placeholder="Name of the artist..."/>
-                <input name="song-album-input" className="song-album-input" type="text" placeholder="Name of Album(not requirment)..."/>
-                <input name="song-file-input" className="song-file-input" type="file"/>
-                <input name="song-submit" type="submit"/>
-              </div>
-            </form>
           </div>
           <div className="play pause"> 
             <ReactHowler

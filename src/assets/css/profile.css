@@ -34,51 +34,43 @@
     display: flex;
     justify-content: flex-start;
     padding-top: 70px;
-    height: 400px;
+    height: 300px;
 }
 .profile-img > img{
-    height: 300px;
+    height: 250px;
     width: 300px;
 }
 .profile-column{
     display: flex;
     flex-direction: column;
-    padding-top: 130px;
+    padding-top: 90px;
 }
-.profile-name{
+.profile-username{
     display: flex;
     align-items: center;
     color: #fff;
     font-family: 'Roboto',sans-serif;
     margin-left: 40px;
+    margin-top: 40px;
 }
-.profile-name > h3{
+h3{
     text-align: center;
     font-size: 40px;
     padding-left: 20px;
 }
-.profile-name > h4{
+h4{
     text-align: center;
     font-size: 30px;
 }
-.profile-surname{
+/* .profile-surname{
     display: flex;
     align-items: center;
     color: #fff;
     font-family: 'Roboto',sans-serif;
     margin-left: 40px;
     margin-top: 30px;
-}
-.profile-surname > h3{
-    text-align: center;
-    font-size: 40px;
-    padding-left: 20px;
-}
-.profile-surname > h4{
-    text-align: center;
-    font-size: 30px;
-}
-.profile-date-of-bithday{
+} */
+/* .profile-date-of-bithday{
     display: flex;
     align-items: center;
     color: #fff;
@@ -92,9 +84,9 @@
 }
 .profile-date-of-bithday > h3{
     text-align: center;
-    font-size: 32px;
+    font-size: 28px;
     padding-left: 20px;
-}
+} */
 .profile-email{
     display: flex;
     align-items: center;
@@ -115,7 +107,7 @@
 .profile-information{
     position: absolute;
     left: 50px;
-    bottom: 25%;
+    bottom: 20%;
     display: flex;
     justify-content: flex-start;
     align-items: center;
@@ -188,7 +180,7 @@
 }
 .profile-songs{
     position: absolute;
-    right: 60px;
+    right: 30px;
 }
 .songs-title{
     margin-top: 70px;
@@ -204,7 +196,7 @@
 }
 div.user-songs {
     font-family: 'Roboto',sans-serif;
-    line-height: 33px;
+    line-height: 30px;
     border: 4px solid #792396;
     background-color: #555555;
     width: 550px;

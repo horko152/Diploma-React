@@ -5,21 +5,33 @@ import Song from "./components/Song";
 const testSong = [
   {
     id: 1,
-    name: '1',
-    artist: '1',
-    likes: '1',
+    name: 'Blinding Lights',
+    artist: 'The Weeknd',
+    likes: '100%',
   },
   {
     id: 2,
-    name: '2',
-    artist: '2',
-    likes: '2',
+    name: 'Heartless',
+    artist: 'The Weeknd',
+    likes: '50%',
   },
   {
     id: 3,
-    name: 3,
-    artist: 3,
-    likes: 3,
+    name: 'In Your Eyes',
+    artist: 'The Weeknd',
+    likes: '50%',
+  },
+  {
+    id: 4,
+    name: 'Save Your Tears',
+    artist: 'The Weeknd',
+    likes: '50%',
+  },
+  {
+    id: 5,
+    name: 'After Hours',
+    artist: 'The Weeknd',
+    likes: '50%',
   },
 ]
 
@@ -45,18 +57,18 @@ const Profile = () => {
             <img src={require('../../assets/image/profile-img.png')}/>
           </div>
           <div className="profile-column">
-            <div className="profile-name">
-              <h4>Name:</h4>
-              <h3>Igor</h3>
+            <div className="profile-username">
+              <h4>Username:</h4>
+              <h3>horko</h3>
             </div>
-            <div className="profile-surname">
+            {/* <div className="profile-surname">
               <h4>Surname:</h4>
               <h3>Voloshenyuk</h3>
             </div>
-            <div className="profile-date-of-bithday">
+             <div className="profile-date-of-bithday">
               <h4>Date of Birthday:</h4>
               <h3>12.08.1998</h3>
-            </div>
+            </div>  */}
             <div className="profile-email">
               <h4>Email:</h4>
               <h3>voloshenyuk98@gmail.com</h3>
@@ -65,7 +77,7 @@ const Profile = () => {
               <div className="information-title">
                 <h3>About me</h3>
               </div>
-              <p>I am a developer of this project for my diploma work. If you found bugs send me description of them on
+              <p>I am a developer of this project for my graduate work. If you found bugs send me description of them on
                 my email.</p>
             </div>
             <div className="profile-edit">
