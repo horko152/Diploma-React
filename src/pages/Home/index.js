@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
 import ReactHowler from 'react-howler';
 import { Howl, Howler } from 'howler';
 import RadioButton from '../../components/RadioButton';
 import AddSong from './components/AddSong';
+import Header from './components/Header';
+import SongInfo from './components/SongInfo';
 
 const Home = ({ isLogged }) => {
 	const [volume, setVolume] = useState(1);
@@ -23,44 +24,16 @@ const Home = ({ isLogged }) => {
 
 	const [play, setPlay] = useState(false);
 	const [pause, setPause] = useState(false);
-	const [likeType, setLikeType] = useState(false);
+	const [likeType, setLikeType] = useState('');
 	const [AddingSong, setAddingSong] = useState(false);
+
 	return (
 		<div>
-			<header className="header home-header">
-				<div className="header-user">
-					<div className="viewers">120 viewers</div>
-					<Link to="/login">
-						<img
-							src={require('../../assets/image/login.png')}
-							className={`login-img ${isLogged ? 'hidden' : ''}`}
-							alt="Login"
-						/>
-					</Link>
-					<Link to="/profile">
-						<img
-							src={require('../../assets/image/user1.png')}
-							className={`user-img ${isLogged ? '' : 'hidden'}`}
-							alt="Profile"
-						/>
-					</Link>
-				</div>
-			</header>
+			<Header isLogged={isLogged} />
 			<main className="main home-main">
 				<RadioButton />
-				<div className="song-info">
-					<div className="artist">
-						<h2 className="artist-name">The Weeknd</h2>
-					</div>
-					<div className="song">
-						<h3 className="song-name">Blinding Lights</h3>
-					</div>
-					<div className="user-name-uploaded">
-						<a className="user-name-uploaded-link" href="">
-							horko
-						</a>
-					</div>
-				</div>
+				<SongInfo songInfo={{ name: 'here will be info' }} />
+
 				<div className="volume">
 					<img
 						className={`volume-img ${mute ? 'hidden' : ''}`}
@@ -87,6 +60,7 @@ const Home = ({ isLogged }) => {
 						/>
 					</div>
 				</div>
+
 				<div className="song-options">
 					<div className="add-song">
 						<button
@@ -97,7 +71,7 @@ const Home = ({ isLogged }) => {
 						>
 							<span className="btn-content">Add Song</span>
 						</button>
-						{AddingSong ? <AddSong /> : null}
+						{AddingSong && <AddSong />}
 					</div>
 					<div className="play pause">
 						<ReactHowler
