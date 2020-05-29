@@ -2,12 +2,16 @@ import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import { Link, useHistory } from 'react-router-dom';
 import RadioButton from '../../components/RadioButton';
-import { signInRequest } from '../../services/Login/api';
+import { signInRequest, signUpRequest } from '../../services/Login/api';
+import Input from '../../components/Input';
 
 const Login = ({ isLogged, setLogged }) => {
-	const [username, setUserName] = useState('');
-	const [email, setEmail] = useState('');
-	const [password, setPassword] = useState('');
+	const [values, setValues] = useState({
+		username: '',
+		email: '',
+		password: ''
+	});
+
 	const [signIn, setSignIn] = useState(true);
 	const history = useHistory();
 
@@ -17,19 +21,44 @@ const Login = ({ isLogged, setLogged }) => {
 		}
 	}, []);
 
-	const loginFun = e => {
+	const submit = e => {
 		e.preventDefault();
+		if (signIn) {
+			login();
+		} else {
+			register();
+		}
+	};
+
+	const login = () => {
 		signInRequest({
-			username,
-			password
+			username: values.username,
+			password: values.password
 		})
 			.then(res => {
-				// eslint-disable-next-line no-undef
 				localStorage.setItem('token', `Bearer ${res}`);
 				history.push('/profile');
 				setLogged(true);
 			})
 			.catch(res => console.log(res));
+	};
+
+	const register = () => {
+		signUpRequest({
+			username: values.username,
+			email: values.email,
+			password: values.password
+		})
+			.then(res => {
+				localStorage.setItem('token', `Bearer ${res}`);
+				history.push('/profile');
+				setLogged(true);
+			})
+			.catch(res => console.log(res));
+	};
+
+	const changeValue = value => {
+		setValues({ ...values, ...value });
 	};
 
 	return (
@@ -58,30 +87,24 @@ const Login = ({ isLogged, setLogged }) => {
 				</div>
 				<form className="signUp-form sign-show">
 					{!signIn && (
-						<input
-							name="name-input"
-							className="signUp-input"
-							type="text"
+						<Input
+							inputClassName="signUp-input"
 							placeholder="Your email..."
-							value={email}
-							onChange={e => setEmail(e.target.value)}
+							value={values.email}
+							onChange={value => changeValue({ email: value })}
 						/>
 					)}
-					<input
-						name="email-input"
-						className="signUp-input"
-						type="text"
+					<Input
+						inputClassName="signUp-input"
 						placeholder="Your username..."
-						value={username}
-						onChange={e => setUserName(e.target.value)}
+						value={values.username}
+						onChange={value => changeValue({ username: value })}
 					/>
-					<input
-						name="password-input"
-						className="signUp-input"
-						type="text"
+					<Input
+						inputClassName="signUp-input"
 						placeholder="Your password..."
-						value={password}
-						onChange={e => setPassword(e.target.value)}
+						value={values.password}
+						onChange={value => changeValue({ password: value })}
 					/>
 					<div className="center pdtop-20">
 						<button
@@ -89,7 +112,7 @@ const Login = ({ isLogged, setLogged }) => {
 							type="submit"
 							className="sign-button"
 							onClick={e => {
-								loginFun(e);
+								submit(e);
 							}}
 						>
 							<span className="sign-button-content">{signIn ? 'Sign in' : 'Sign up'}</span>

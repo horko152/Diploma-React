@@ -1,6 +1,6 @@
 import React, { useRef, useState } from 'react';
 import { addSongRequest } from '../../../../services/Songs/api';
-import Input from '../Input';
+import Input from '../../../../components/Input';
 
 const AddSong = () => {
 	const fileRef = useRef();
@@ -29,7 +29,7 @@ const AddSong = () => {
 	};
 
 	return [
-		<div className="add-song">
+		<div key="1" className="add-song">
 			<button
 				className="add-btn"
 				onClick={() => {
@@ -40,7 +40,7 @@ const AddSong = () => {
 			</button>
 		</div>,
 		addingSong && (
-			<form className="add-song-form">
+			<form key="2" className="add-song-form">
 				<div className="add-song-content">
 					<h3>Add Song</h3>
 					<Input
