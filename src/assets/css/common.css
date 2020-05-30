@@ -217,3 +217,8 @@ main{
 .pointer {
     cursor: pointer;
 }
+
+.font {
+    color: #fff;
+    font-family: 'Roboto',sans-serif;
+}

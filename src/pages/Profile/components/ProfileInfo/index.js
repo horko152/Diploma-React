@@ -1,9 +1,20 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import profileImg from '../../../../assets/image/profile-img.png';
+import { getProfileRequest } from '../../../../services/Profile/api';
 
 const ProfileInfo = () => {
+	const [profile, setProfile] = useState({
+		userName: '',
+		email: '',
+		about: ''
+	});
+
 	useEffect(() => {
-		// here get user info
+		// maybe need user id or not )
+		setProfile(getProfileRequest());
+		// .then(res => {
+		// setProfile(res);
+		// });
 	}, []);
 
 	return (
@@ -12,30 +23,19 @@ const ProfileInfo = () => {
 				<img src={profileImg} alt="profile" />
 			</div>
 			<div className="profile-column">
-				<div className="profile-username">
+				<div className="profile-field font profile-username">
 					<h4>Username:</h4>
-					<h3>horko</h3>
+					<h3>{profile.userName}</h3>
 				</div>
-				{/* <div className="profile-surname">
-              <h4>Surname:</h4>
-              <h3>Voloshenyuk</h3>
-            </div>
-             <div className="profile-date-of-bithday">
-              <h4>Date of Birthday:</h4>
-              <h3>12.08.1998</h3>
-            </div>  */}
-				<div className="profile-email">
+				<div className="profile-field font">
 					<h4>Email:</h4>
-					<h3>voloshenyuk98@gmail.com</h3>
+					<h3>{profile.email}</h3>
 				</div>
-				<div className="profile-information">
+				<div className="profile-information font">
 					<div className="information-title">
 						<h3>About me</h3>
 					</div>
-					<p>
-						I am a developer of this project for my graduate work. If you found bugs send me
-						description of them on my email.
-					</p>
+					<p>{profile.about}</p>
 				</div>
 				<div className="profile-edit">
 					<button type="button" className="edit-btn">

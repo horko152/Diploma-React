@@ -45,12 +45,18 @@
     flex-direction: column;
     padding-top: 90px;
 }
-.profile-username{
+.profile-field{
     display: flex;
     align-items: center;
-    color: #fff;
-    font-family: 'Roboto',sans-serif;
     margin-left: 40px;
+    margin-top: 35px;
+}
+.profile-field > h3{
+    font-size: 24px;
+    padding-left: 20px;
+}
+
+.profile-username{
     margin-top: 40px;
 }
 h3{
@@ -62,48 +68,7 @@ h4{
     text-align: center;
     font-size: 30px;
 }
-/* .profile-surname{
-    display: flex;
-    align-items: center;
-    color: #fff;
-    font-family: 'Roboto',sans-serif;
-    margin-left: 40px;
-    margin-top: 30px;
-} */
-/* .profile-date-of-bithday{
-    display: flex;
-    align-items: center;
-    color: #fff;
-    font-family: 'Roboto',sans-serif;
-    margin-left: 40px;
-    margin-top: 30px;
-}
-.profile-date-of-bithday > h4{
-    text-align: center;
-    font-size: 30px;
-}
-.profile-date-of-bithday > h3{
-    text-align: center;
-    font-size: 28px;
-    padding-left: 20px;
-} */
-.profile-email{
-    display: flex;
-    align-items: center;
-    color: #fff;
-    font-family: 'Roboto',sans-serif;
-    margin-left: 40px;
-    margin-top: 35px;
-}
-.profile-email > h4{
-    text-align: center;
-    font-size: 30px;
-}
-.profile-email > h3{
-    text-align: center;
-    font-size: 24px;
-    padding-left: 20px;
-}
+
 .profile-information{
     position: absolute;
     left: 50px;
@@ -113,17 +78,14 @@ h4{
     align-items: center;
     flex-direction: column;
     margin-top: 50px;
-   
-    color: #fff;
-    font-family: 'Roboto',sans-serif;
+
 }
 .information-title{
     font-size: 30px;
-    margin-bottom: 0px;
+    margin-bottom: 0;
 }
 .information-title > h3{
     color: #fff;
-
 }
 .profile-information > p{
     width: 600px;

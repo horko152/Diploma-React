@@ -1,43 +1,16 @@
 import React, { useEffect, useState } from 'react';
 import Song from '../Song';
-
-const testSong = [
-	{
-		id: 1,
-		name: 'Blinding Lights',
-		artist: 'The Weeknd',
-		likes: '100%'
-	},
-	{
-		id: 2,
-		name: 'Heartless',
-		artist: 'The Weeknd',
-		likes: '50%'
-	},
-	{
-		id: 3,
-		name: 'In Your Eyes',
-		artist: 'The Weeknd',
-		likes: '50%'
-	},
-	{
-		id: 4,
-		name: 'Save Your Tears',
-		artist: 'The Weeknd',
-		likes: '50%'
-	},
-	{
-		id: 5,
-		name: 'After Hours',
-		artist: 'The Weeknd',
-		likes: '50%'
-	}
-];
+import { getSongListRequest } from '../../../../services/Profile/api';
 
 const SongList = () => {
 	const [page, setPage] = useState(1);
+	const [listOfPages, setListOfPages] = useState([]);
 	useEffect(() => {
 		// here get list with user songs
+		setListOfPages(getSongListRequest());
+		// .then(res => {
+		// setListOfPages(res);
+		// });
 	}, []);
 
 	return (
@@ -55,9 +28,9 @@ const SongList = () => {
 					</div>
 				</div>
 				<div className="divTableBody">
-					{testSong &&
-						testSong.length > 0 &&
-						testSong.map(song => {
+					{listOfPages &&
+						listOfPages.length > 0 &&
+						listOfPages.map(song => {
 							return <Song key={`${song.name}`} song={song} />;
 						})}
 				</div>
