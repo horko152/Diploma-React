@@ -10,15 +10,24 @@ import playImg from '../../assets/image/play.png';
 import pauseImg from '../../assets/image/pause.png';
 import volumeImg from '../../assets/image/volume.png';
 import muteImg from '../../assets/image/mute.png';
+import { getSongInfoRequest } from '../../services/Songs/api';
 
 const Home = ({ isLogged }) => {
 	const howlerRef = useRef();
 	const [volume, setVolume] = useState(1);
 	const [mute, setMute] = useState(false);
 	const [pause, setPause] = useState(false);
+	const [song, setSong] = useState({
+		artist: '',
+		name: '',
+		author: ''
+	});
 
 	useEffect(() => {
-		// here will be loading sond
+		// here will be loading song
+		getSongInfoRequest().then(res => {
+			setSong(res);
+		});
 	});
 
 	const changeInput = event => {
@@ -40,7 +49,7 @@ const Home = ({ isLogged }) => {
 			<Header isLogged={isLogged} />
 			<main className="main home-main">
 				<RadioButton />
-				<SongInfo songInfo={{ name: 'here will be info' }} />
+				<SongInfo songInfo={song} />
 				<div className="volume">
 					<img className="volume-img" onClick={clickMute} src={mute ? muteImg : volumeImg} alt="" />
 					<div className="volume-control">

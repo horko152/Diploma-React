@@ -11,10 +11,9 @@ const ProfileInfo = () => {
 
 	useEffect(() => {
 		// maybe need user id or not )
-		setProfile(getProfileRequest());
-		// .then(res => {
-		// setProfile(res);
-		// });
+		getProfileRequest().then(res => {
+			setProfile(res);
+		});
 	}, []);
 
 	return (

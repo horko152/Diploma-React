@@ -7,10 +7,9 @@ const SongList = () => {
 	const [listOfPages, setListOfPages] = useState([]);
 	useEffect(() => {
 		// here get list with user songs
-		setListOfPages(getSongListRequest());
-		// .then(res => {
-		// setListOfPages(res);
-		// });
+		getSongListRequest().then(res => {
+			setListOfPages(res);
+		});
 	}, []);
 
 	return (

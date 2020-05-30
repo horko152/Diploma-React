@@ -1,7 +1,7 @@
 import request from '../request';
 
-export const getSongListRequest = params => {
-	return [
+export const getSongListRequest = async params => {
+	return await [
 		{
 			id: 1,
 			name: 'Blinding Lights',
@@ -36,8 +36,8 @@ export const getSongListRequest = params => {
 	// return request.get('', params);
 };
 
-export const getProfileRequest = params => {
-	return {
+export const getProfileRequest = async params => {
+	return await {
 		userName: 'horko',
 		email: 'voloshenyuk98@gmail.com',
 		about:
